@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Anton Kundenko — CV</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --paper: #ffffff;
+      --ink: #0f172a;
+      --text: #334155;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --chip-bg: #f1f5f9;
+      --chip-text: #475569;
+      --shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.1);
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: white;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 40px 20px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.15s ease
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline
+    }
+
+    .page {
+      max-width: 1060px;
+      margin: 0 auto;
+      background: var(--paper);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 48px 48px 40px 48px;
+      background: #0f172a;
+      background-image: radial-gradient(circle at 100% 0%, #1e293b 0%, #0f172a 100%);
+      color: #f8fafc;
+    }
+
+    .avatar {
+      width: 120px;
+      height: auto;
+      border-radius: 12px;
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      flex: 0 0 auto;
+      background: transparent;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: inherit;
+    }
+
+    .name {
+      font-size: 38px;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .role {
+      font-size: 16px;
+      color: #38bdf8;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      margin-bottom: 12px;
+    }
+
+    .tagline {
+      font-size: 15px;
+      color: #94a3b8;
+      line-height: 1.6;
+      max-width: 75ch;
+      font-weight: 400;
+    }
+
+    .contacts {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #e2e8f0;
+      font-size: 13.5px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.2s ease;
+    }
+
+    .contact:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .contact svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.8;
+      flex-shrink: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 48px;
+      padding: 48px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .h2 {
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .h2::after {
+      content: "";
+      height: 1px;
+      background: var(--line);
+      flex: 1;
+    }
+
+    .p {
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .p b {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .proj {
+      margin-bottom: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .proj:last-child {
+      margin-bottom: 0;
+    }
+
+    .proj-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .proj-title b {
+      font-size: 17px;
+      color: var(--ink);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .proj-title span {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .proj>.p.muted {
+      font-size: 14.5px;
+      margin-bottom: 12px;
+      color: #475569;
+    }
+
+    .bullets {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-left: 20px;
+      color: var(--text);
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+
+    .bullets li {
+      padding-left: 4px;
+    }
+
+    .bullets li::marker {
+      color: #94a3b8;
+    }
+
+    .chips {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--chip-bg);
+      color: var(--chip-text);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .xp {
+      margin-bottom: 32px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .xp:last-child {
+      margin-bottom: 0;
+    }
+
+    .xp-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .xp-role {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .xp-meta {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .xp-org {
+      font-size: 14.5px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .side {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      background: #f8fafc;
+    }
+
+    .card .h2 {
+      margin-bottom: 16px;
+      font-size: 12px;
+      color: var(--ink);
+    }
+
+    .card .h2::after {
+      display: none;
+    }
+
+    .kv {
+      display: grid;
+      gap: 16px;
+    }
+
+    .kv-item b {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .kv-item div {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .skill-groups {
+      display: grid;
+      gap: 20px;
+    }
+
+    .skill-group .title {
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .skill-group .list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-group .chip {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+
+    .chip-accent {
+      background: var(--accent) !important;
+      color: #ffffff !important;
+      border-color: var(--accent) !important;
+      font-weight: 600;
+    }
+
+    /* Print styling */
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        max-width: 100%;
+        top: 0;
+      }
+
+      .top {
+        padding: 32px 40px;
+      }
+
+      .grid {
+        padding: 32px 40px;
+        gap: 32px;
+      }
+
+      .contact {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 880px) {
+      body {
+        padding: 0
+      }
+
+      .page {
+        border-radius: 0;
+        border: none
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+      }
+
+      .top {
+        padding: 32px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      .avatar {
+        width: 100px;
+        height: auto;
+      }
+
+      .name {
+        font-size: 32px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="top">
+      <div class="avatar" aria-label="Photo">
+        <!-- Put your photo as avatar.png next to this HTML file -->
+        <img src="avatar.png" alt="Anton Kundenko" />
+      </div>
+      <div style="flex:1">
+        <div class="name">Anton Kundenko</div>
+        <div class="role">Principal Systems Engineer • Database Architect • Creator of Rayfall Language</div>
+        <div class="tagline">Designing ultra-fast analytical systems that operate at hardware speed — SIMD-first,
+          cache-aware, and minimal by construction. Author of <b>Rayfall</b>, a Lisp-like array language for
+          vectorized analytics.</div>
+
+        <nav class="contacts" aria-label="Contacts">
+          <a class="contact" href="https://hetoku.com" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2a10 10 0 100 20 10 10 0 000-20zm7.93 9h-3.17a15.7 15.7 0 00-1.1-5.02A8.02 8.02 0 0119.93 11zM12 4.07c.9 1.18 1.76 3.4 2.18 6.93H9.82C10.24 7.47 11.1 5.25 12 4.07zM4.07 13h3.17c.24 1.8.72 3.55 1.1 5.02A8.02 8.02 0 014.07 13zm3.17-2H4.07a8.02 8.02 0 013.27-5.02c-.38 1.47-.86 3.22-1.1 5.02zM12 19.93c-.9-1.18-1.76-3.4-2.18-6.93h4.36c-.42 3.53-1.28 5.75-2.18 6.93zM16.76 13h3.17a8.02 8.02 0 01-3.27 5.02c.38-1.47.86-3.22 1.1-5.02z" />
+            </svg>
+            hetoku.com
+          </a>
+
+          <a class="contact" href="https://github.com/singaraiona" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 .5a12 12 0 00-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.35-1.77-1.35-1.77-1.1-.75.09-.74.09-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.84 1.32 3.53 1.01.11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.92 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.16 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.86.12 3.16.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.61-5.47 5.91.43.37.81 1.1.81 2.22v3.3c0 .32.22.7.83.58A12 12 0 0012 .5z" />
+            </svg>
+            github.com/singaraiona
+          </a>
+
+          <a class="contact" href="https://www.linkedin.com/in/anton-kundenko-a22a3667/" target="_blank"
+            rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.45 20.45h-3.55v-5.56c0-1.33-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.66-1.86 3.41-1.86 3.64 0 4.31 2.4 4.31 5.52v6.23zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+            </svg>
+            LinkedIn
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="grid">
+      <!-- MAIN -->
+      <div class="main">
+        <section class="section">
+          <div class="h2">Summary</div>
+          <p class="p">
+            Principal-level systems engineer and database architect with <b>18+ years</b> across embedded systems,
+            mobile OS/ARM platform work, and financial technology. Founder and lead architect of <b>RayforceDB</b>
+            (SIMD-optimized columnar database + <b>Rayfall</b> language ecosystem) and founder of <b>TeideDB</b>
+            (analytical SQL engine / embedded analytics runtime). Co-founder of <b>ThePlatform</b>, a real-time
+            analytics
+            stack with custom language/runtime for streaming and historical data processing.
+            Deep expertise in SIMD optimization (AVX2/NEON), cache-aware layouts, mmap-based storage, lock-free
+            concurrency,
+            and low-latency market data processing.
+          </p>
+        </section>
+
+        <section class="section">
+          <div class="h2">Key Projects</div>
+
+          <article class="proj">
+            <div class="proj-title">
+              <b>Teidelum — Founder & Lead Architect</b>
+              <span>2025 — Present · <a href="https://lum.teidedb.com/" target="_blank" rel="noreferrer">lum.teidedb.com</a></span>
+            </div>
+            <div class="p muted">
+              Open-source, single-binary knowledge infrastructure built on the Teide columnar engine. Syncs work tools,
+              indexes content, and serves data to AI agents via MCP and applications via REST — entirely local, no cloud
+              dependencies.
+            </div>
+            <ul class="bullets">
+              <li>BM25-ranked full-text search with fuzzy matching and highlighted snippets.</li>
+              <li>SQL analytics powered by the embedded Teide columnar engine — filtering, grouping, sorting, and joins
+                over structured data.</li>
+              <li>Graph traversal via foreign-key relationships; dual API (MCP over stdio + REST over HTTP) exposing 11
+                tools.</li>
+              <li>Incremental sync from Notion, Zulip, and live database connections; one Rust binary, no Docker or
+                config files.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Rust</span><span class="chip">Columnar engine</span><span class="chip">MCP</span><span
+                class="chip">Full-text search</span><span class="chip">SQL</span><span class="chip">MIT
+                licensed</span>
+            </div>
+          </article>
+
+          <article class="proj">
+            <div class="proj-title">
+              <b>TeideDB — Founder & Lead Architect</b>
+              <span>2024 — Present · <a href="https://teidedb.com" target="_blank" rel="noreferrer">teidedb.com</a></span>
+            </div>
+            <div class="p muted">
+              Analytical SQL engine / embedded analytics runtime designed to bring a modern SQL interface to a
+              vectorized, in-process execution model.
+            </div>
+            <ul class="bullets">
+              <li>Vectorized operators and optimizer-oriented architecture for fast analytical workloads.</li>
+              <li>Designed for agent-driven analytics pipelines and interactive reporting over columnar data.</li>
+              <li>Integrates with the broader Rayforce ecosystem (storage, runtime components, and tooling).</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">SQL</span><span class="chip">Vectorized execution</span><span class="chip">Embedded /
+                in-process</span><span class="chip">C</span><span class="chip">Performance engineering</span>
+            </div>
+          </article>
+
+          <article class="proj">
+            <div class="proj-title">
+              <b>AXL DB — Founder</b>
+              <span>2021 — Present · <a href="https://axl-db.com/" target="_blank" rel="noreferrer">axl-db.com</a></span>
+            </div>
+            <div class="p muted">
+              Ultra-compact (&lt;1MB core) zero-dependency vector database engine optimized for deterministic latency.
+            </div>
+            <ul class="bullets">
+              <li>SIMD-first interpreter with cache-aware layouts and batched I/O.</li>
+              <li>Designed for high-frequency trading, edge analytics, and embedded deployments across ARM/x86.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Vector DB</span><span class="chip">&lt;1MB core</span><span class="chip">Deterministic
+                latency</span><span class="chip">AVX2/NEON</span>
+            </div>
+          </article>
+
+          <article class="proj">
+            <div class="proj-title">
+              <b>RayforceDB — Founder & Lead Architect</b>
+              <span>2020 — Present · <a href="https://rayforcedb.com/" target="_blank" rel="noreferrer">rayforcedb.com</a></span>
+            </div>
+            <div class="p muted">
+              SIMD-first columnar analytical database with a Lisp-like query language (<b><a href="https://core.rayforcedb.com/content/documentation/overview.html" target="_blank" rel="noreferrer">Rayfall</a></b>), implemented in C
+              with zero dependencies.
+            </div>
+            <ul class="bullets">
+              <li>Designed a vectorized execution model with cache-friendly column layouts and mmap-based storage.</li>
+              <li>Built an end-to-end ecosystem: core engine, language/runtime, test & benchmark tooling, and bindings
+                (Python/Rust/WASM).</li>
+              <li>Targeted at time-series analytics and low-latency decision pipelines as a modern alternative to kdb+ /
+                embedded analytics stacks.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">C17</span><span class="chip">SIMD (AVX2/NEON)</span><span
+                class="chip">Columnar</span><span class="chip">mmap</span><span class="chip">Zero deps</span><span
+                class="chip">Language design</span>
+            </div>
+          </article>
+
+          <article class="proj">
+            <div class="proj-title">
+              <b>ThePlatform — Co-Founder</b>
+              <span>2016 — Present · <a href="https://theplatform.technology/" target="_blank" rel="noreferrer">theplatform.technology</a></span>
+            </div>
+            <div class="p muted">
+              Real-time + historical analytics stack for financial data with a custom programming language (<b><a href="https://theplatform.technology/applicationexamples.html" target="_blank" rel="noreferrer">O</a></b>)
+              and async messaging runtime.
+            </div>
+            <ul class="bullets">
+              <li>Built language/runtime components and a declarative model for streaming & historical analytics.</li>
+              <li>Implemented communication reagents: TCP/UDP/WebSocket/IPC/TLS, timers, plugins, and standard library
+                tooling (parsers, serialization).</li>
+              <li>Used to power low-latency analytics workflows and risk/market-data pipelines.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Language + runtime</span><span class="chip">Time-series</span><span
+                class="chip">Low-latency</span><span class="chip">C</span><span class="chip">Streaming</span>
+            </div>
+          </article>
+
+          <article class="proj">
+            <div class="proj-title">
+              <b>hyperbridge</b>
+              <span>Rust · <a href="https://github.com/singaraiona/hyperbridge" target="_blank" rel="noreferrer">GitHub</a></span>
+            </div>
+            <div class="p muted">
+              High-throughput multi-producer/multi-consumer unbounded channel with async support (lock-free,
+              concurrency-first).
+            </div>
+            <div class="chips">
+              <span class="chip">Rust</span><span class="chip">Lock-free</span><span
+                class="chip">Concurrency</span><span class="chip">Async</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="section">
+          <div class="h2">Experience</div>
+
+          <div class="xp">
+            <div class="xp-head">
+              <div class="xp-role">Founder & Principal Architect</div>
+              <div class="xp-meta">2020 — Present</div>
+            </div>
+            <div class="xp-org">RayforceDB / TeideDB</div>
+            <ul class="bullets">
+              <li>Architected multiple database engines and language runtimes focused on vectorized execution and
+                minimal footprint.</li>
+              <li>Designed SIMD-optimized operators, memory layouts, storage formats, and execution models for
+                analytical workloads.</li>
+              <li>Built production-grade build & test infrastructure and public open-source ecosystems (bindings,
+                benchmarks, docs).</li>
+            </ul>
+          </div>
+
+          <div class="xp">
+            <div class="xp-head">
+              <div class="xp-role">Co-Founder</div>
+              <div class="xp-meta">2016 — Present</div>
+            </div>
+            <div class="xp-org">ThePlatform</div>
+            <ul class="bullets">
+              <li>Built a real-time analytics stack used in financial data processing environments.</li>
+              <li>Designed language/runtime capabilities enabling declarative analytics and streaming computation.</li>
+            </ul>
+          </div>
+
+          <div class="xp">
+            <div class="xp-head">
+              <div class="xp-role">Senior Engineer</div>
+              <div class="xp-meta">2013 — 2020</div>
+            </div>
+            <div class="xp-org">Confidential (NDA) — Algorithmic Trading / FinTech</div>
+            <ul class="bullets">
+              <li>Developed low-latency trading infrastructure, market-data processing, and real-time analytics
+                pipelines.</li>
+              <li>Worked on performance-critical systems where deterministic latency and correctness under load are
+                essential.</li>
+            </ul>
+          </div>
+
+          <div class="xp">
+            <div class="xp-head">
+              <div class="xp-role">Lead Engineer, Project Lead</div>
+              <div class="xp-meta">2012 — 2013</div>
+            </div>
+            <div class="xp-org">Samsung Electronics Ukraine R&amp;D</div>
+            <ul class="bullets">
+              <li>Led OS virtualization work on ARM Cortex-A15; implemented TrustZone security extensions and DRM
+                systems.</li>
+              <li>Delivered low-level platform software integrating kernel, security, and hardware-software boundaries.
+              </li>
+            </ul>
+          </div>
+
+          <div class="xp">
+            <div class="xp-head">
+              <div class="xp-role">Embedded / Systems Developer</div>
+              <div class="xp-meta">2007 — 2012</div>
+            </div>
+            <div class="xp-org">TranSat • Technotrade</div>
+            <ul class="bullets">
+              <li>Built embedded systems (smart house, voting, CCTV, parking control) and POS/payment terminal software.
+              </li>
+              <li>Developed transaction-critical systems with strong reliability requirements.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="h2">Education</div>
+          <div class="card">
+            <div class="xp-role" style="margin-bottom:4px">Specialist Degree (Master-level) — Automation &
+              Computer-Integrated Technologies</div>
+            <div class="muted" style="font-size:12px;margin-bottom:6px">Donbass State Engineering Academy • 2001 — 2006
+            </div>
+            <div class="p muted">Automation engineering foundation: embedded systems, computer-integrated technologies,
+              and systems programming.</div>
+          </div>
+        </section>
+      </div>
+
+      <!-- SIDE -->
+      <aside class="side">
+        <section class="card">
+          <div class="h2" style="margin-bottom:12px">Focus</div>
+          <div class="kv">
+            <div class="kv-item">
+              <b>Domains</b>
+              <div>Columnar analytics • Time-series • Embedded analytics • Low-latency finance</div>
+            </div>
+            <div class="kv-item">
+              <b>Strengths</b>
+              <div>SIMD optimization • Cache-aware design • Language runtimes • Minimal/zero-dep systems</div>
+            </div>
+            <div class="kv-item">
+              <b>Working Style</b>
+              <div>Build-from-scratch architectures, correctness under load, clean minimal code, measurable performance.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="h2" style="margin-bottom:12px">Technical Skills</div>
+          <div class="skill-groups">
+            <div class="skill-group">
+              <div class="title">Languages</div>
+              <div class="list">
+                <span class="chip">C (C17)</span><span class="chip">Rust</span><span class="chip">Python</span>
+                <span class="chip">k/q (kdb+)</span><span class="chip">Lisp/Scheme</span><span
+                  class="chip chip-accent">Rayfall</span><span class="chip chip-accent">O language</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="title">Performance</div>
+              <div class="list">
+                <span class="chip">SIMD (AVX2/NEON)</span><span class="chip">Profiling (perf)</span><span
+                  class="chip">Cache optimization</span>
+                <span class="chip">Zero-copy</span><span class="chip">Memory layouts</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="title">Databases</div>
+              <div class="list">
+                <span class="chip">Columnar storage</span><span class="chip">Vectorized execution</span><span
+                  class="chip">Query runtimes</span>
+                <span class="chip">Index structures</span><span class="chip">Time-series</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="title">Systems</div>
+              <div class="list">
+                <span class="chip">Linux</span><span class="chip">ARM</span><span class="chip">mmap I/O</span>
+                <span class="chip">Concurrency</span><span class="chip">Lock-free</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="title">Tooling</div>
+              <div class="list">
+                <span class="chip">Git</span><span class="chip">Make/CMake</span><span class="chip">Sanitizers</span>
+                <span class="chip">Benchmarks</span><span class="chip">CI</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="h2" style="margin-bottom:12px">Open Source</div>
+          <div class="p muted">
+            Maintains multiple performance-focused open-source projects (databases, runtimes, concurrency libraries).
+            <br /><br />
+            <b>GitHub:</b> <a href="https://github.com/singaraiona" target="_blank"
+              rel="noreferrer">github.com/singaraiona</a>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="h2" style="margin-bottom:12px">Languages</div>
+          <div class="p muted">English (professional) • Russian (native) • Ukrainian (fluent)</div>
+        </section>
+      </aside>
+    </section>
+  </main>
+</body>
+
+</html>
