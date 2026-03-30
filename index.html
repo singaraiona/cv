@@ -575,10 +575,11 @@
       </div>
       <div style="flex:1">
         <div class="name">Anton Kundenko</div>
-        <div class="role">Principal Systems Engineer • Database Architect • Programming Language Creator</div>
-        <div class="tagline">Designing ultra-fast analytical systems that operate at hardware speed — SIMD-first,
-          cache-aware, and minimal by construction. Author of <b>Rayfall</b> (Lisp-like array language for
-          vectorized analytics) and <b>O</b> (real-time streaming & historical data processing).</div>
+        <div class="role">Database Systems Architect • Programming Language Creator • Creator of RayforceDB & ThePlatform</div>
+        <div class="tagline">Creator of two original database systems and programming languages adopted in production
+          at <b>Lynx Trading Technologies</b> — replacing kdb+ infrastructure with 7-figure annual savings across
+          hundreds of instances. Author of <b>Rayfall</b> and <b>O</b>, two purpose-built languages for
+          high-performance analytical computing.</div>
 
         <nav class="contacts" aria-label="Contacts">
           <a class="contact" href="https://hetoku.com" target="_blank" rel="noreferrer">
@@ -615,141 +616,138 @@
         <section class="section">
           <div class="h2">Summary</div>
           <p class="p">
-            Principal-level systems engineer and database architect with <b>18+ years</b> across embedded systems,
-            mobile OS/ARM platform work, and financial technology. Founder and lead architect of <b>RayforceDB</b>
-            (SIMD-optimized columnar database + <b>Rayfall</b> language ecosystem) and founder of <b>TeideDB</b>
-            (analytical SQL engine / embedded analytics runtime). Co-founder of <b>ThePlatform</b>, a real-time
-            analytics
-            stack with custom language/runtime for streaming and historical data processing.
-            Deep expertise in SIMD optimization (AVX2/NEON), cache-aware layouts, mmap-based storage, lock-free
-            concurrency,
-            and low-latency market data processing.
+            Database systems architect and programming language creator with <b>18+ years</b> of experience
+            building performance-critical infrastructure. Created two original database systems —
+            <b>RayforceDB</b> and <b>ThePlatform</b> — each with its own purpose-built programming language
+            (<b>Rayfall</b> and <b>O</b>), now in production at <b>Lynx Trading Technologies</b> powering
+            real-time analytics, order routing, and risk management across hundreds of instances.
+            These systems replaced incumbent kdb+ infrastructure, delivering <b>7-figure annual cost savings</b>
+            while handling the same mission-critical financial workloads. Deep expertise in SIMD vectorization,
+            columnar storage design, language runtime implementation, and low-latency systems architecture.
           </p>
         </section>
 
         <section class="section">
-          <div class="h2">Key Projects</div>
+          <div class="h2">Original Contributions</div>
 
           <article class="proj">
             <div class="proj-title">
-              <b>Teidelum — Founder & Lead Architect</b>
-              <span>2025 — Present · <a href="https://lum.teidedb.com/" target="_blank" rel="noreferrer">lum.teidedb.com</a></span>
+              <b>RayforceDB — Creator & Sole Architect</b>
+              <span>2020 — Present · <a href="https://rayforcedb.com/" target="_blank" rel="noreferrer">rayforcedb.com</a></span>
             </div>
             <div class="p muted">
-              Open-source, single-binary knowledge infrastructure built on the Teide columnar engine. Syncs work tools,
-              indexes content, and serves data to AI agents via MCP and applications via REST — entirely local, no cloud
-              dependencies.
+              Original SIMD-first columnar analytical database (&lt;1MB binary, zero dependencies) with <b><a href="https://core.rayforcedb.com/content/documentation/overview.html" target="_blank" rel="noreferrer">Rayfall</a></b>
+              — an original Lisp-like array language for vectorized analytics. Created independently; subsequently
+              sponsored by Lynx Trading Technologies for production adoption.
             </div>
             <ul class="bullets">
-              <li>BM25-ranked full-text search with fuzzy matching and highlighted snippets.</li>
-              <li>SQL analytics powered by the embedded Teide columnar engine — filtering, grouping, sorting, and joins
-                over structured data.</li>
-              <li>Graph traversal via foreign-key relationships; dual API (MCP over stdio + REST over HTTP) exposing 11
-                tools.</li>
-              <li>Incremental sync from Notion, Zulip, and live database connections; one Rust binary, no Docker or
-                config files.</li>
+              <li>Designed and implemented a novel database architecture from scratch in pure C: SIMD-vectorized operators
+                (AVX2/NEON), cache-aware columnar layouts, mmap-based storage, and custom memory management.</li>
+              <li>Created the Rayfall language: a composable, Lisp-like query language with first-class vectors, tables,
+                dictionaries, temporal types, and a comprehensive type system — offering an alternative paradigm to SQL
+                and kdb+'s q for analytical workloads.</li>
+              <li>Built a complete ecosystem: core engine, Python bindings (DataFrame API), Rust bindings, WebAssembly
+                runtime, VS Code extension with REPL, benchmarking suite, and documentation.</li>
+              <li>Adopted by Lynx Trading for production financial analytics — Lynx sponsored continued development
+                based on the system's performance advantages over incumbent solutions.</li>
             </ul>
             <div class="chips">
-              <span class="chip">Rust</span><span class="chip">Columnar engine</span><span class="chip">MCP</span><span
-                class="chip">Full-text search</span><span class="chip">SQL</span><span class="chip">MIT
-                licensed</span>
+              <span class="chip chip-accent">Rayfall language</span><span class="chip">Pure C</span><span
+                class="chip">SIMD (AVX2/NEON)</span><span class="chip">Columnar</span><span class="chip">&lt;1MB / zero deps</span><span
+                class="chip">MIT licensed</span><span class="chip">Cross-platform</span>
             </div>
           </article>
 
           <article class="proj">
             <div class="proj-title">
-              <b>TeideDB — Founder & Lead Architect</b>
+              <b>ThePlatform — Creator & Lead Architect</b>
+              <span>2016 — Present · <a href="https://theplatform.technology/" target="_blank" rel="noreferrer">theplatform.technology</a></span>
+            </div>
+            <div class="p muted">
+              Columnar time-series database and real-time analytics stack created for <b>Lynx Trading Technologies</b>,
+              featuring the original <b><a href="https://theplatform.technology/applicationexamples.html" target="_blank" rel="noreferrer">O programming language</a></b>
+              — a vector language inspired by APL/k with first-class tables, async reagents, and join-calculus concurrency.
+            </div>
+            <ul class="bullets">
+              <li>Designed and implemented a complete database system with its own programming language, replacing
+                Lynx's kdb+/q infrastructure for real-time market data, risk analytics, and order flow processing.</li>
+              <li>Created the O language: vector-oriented with nanosecond timestamps, streaming pub/sub, pattern matching,
+                and declarative concurrency — purpose-built for financial time-series workloads.</li>
+              <li>Built async communication reagents (TCP/UDP/WebSocket/IPC/TLS), plugin architecture, and standard
+                library enabling Lynx to consolidate multiple vendor tools into one platform.</li>
+              <li>Deployed across hundreds of production instances at Lynx, contributing to 7-figure annual savings
+                by eliminating kdb+ license costs and reducing operational complexity.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip chip-accent">O language</span><span class="chip">Columnar DB</span><span
+                class="chip">Time-series</span><span class="chip">Rust</span><span class="chip">Real-time streaming</span><span
+                class="chip">kdb+ replacement</span>
+            </div>
+          </article>
+
+          <article class="proj">
+            <div class="proj-title">
+              <b>TeideDB — Creator & Lead Architect</b>
               <span>2024 — Present · <a href="https://teidedb.com" target="_blank" rel="noreferrer">teidedb.com</a></span>
             </div>
             <div class="p muted">
-              Analytical SQL engine / embedded analytics runtime designed to bring a modern SQL interface to a
-              vectorized, in-process execution model.
+              Analytical SQL engine / embedded analytics runtime extending the Rayforce ecosystem with a modern
+              SQL interface over a vectorized, in-process execution model.
             </div>
             <ul class="bullets">
               <li>Vectorized operators and optimizer-oriented architecture for fast analytical workloads.</li>
               <li>Designed for agent-driven analytics pipelines and interactive reporting over columnar data.</li>
-              <li>Integrates with the broader Rayforce ecosystem (storage, runtime components, and tooling).</li>
             </ul>
             <div class="chips">
               <span class="chip">SQL</span><span class="chip">Vectorized execution</span><span class="chip">Embedded /
-                in-process</span><span class="chip">C</span><span class="chip">Performance engineering</span>
+                in-process</span><span class="chip">C</span>
             </div>
           </article>
 
           <article class="proj">
             <div class="proj-title">
-              <b>AXL DB — Founder</b>
+              <b>Teidelum — Creator & Lead Architect</b>
+              <span>2025 — Present · <a href="https://lum.teidedb.com/" target="_blank" rel="noreferrer">lum.teidedb.com</a></span>
+            </div>
+            <div class="p muted">
+              Open-source knowledge infrastructure built on the Teide columnar engine — syncs work tools,
+              indexes content, and serves data to AI agents via MCP and applications via REST.
+            </div>
+            <ul class="bullets">
+              <li>BM25-ranked full-text search, SQL analytics, graph traversal; dual API (MCP + REST).</li>
+              <li>Single Rust binary, zero cloud dependencies, incremental sync from Notion/Zulip/databases.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Rust</span><span class="chip">MCP</span><span class="chip">Full-text search</span><span
+                class="chip">SQL</span><span class="chip">MIT licensed</span>
+            </div>
+          </article>
+
+          <article class="proj">
+            <div class="proj-title">
+              <b>AXL DB</b>
               <span>2021 — Present · <a href="https://axl-db.com/" target="_blank" rel="noreferrer">axl-db.com</a></span>
             </div>
             <div class="p muted">
-              Ultra-compact (&lt;1MB core) zero-dependency vector database engine optimized for deterministic latency.
+              Ultra-compact (&lt;1MB core) zero-dependency vector database for deterministic-latency workloads
+              (HFT, edge analytics, embedded ARM/x86).
             </div>
-            <ul class="bullets">
-              <li>SIMD-first interpreter with cache-aware layouts and batched I/O.</li>
-              <li>Designed for high-frequency trading, edge analytics, and embedded deployments across ARM/x86.</li>
-            </ul>
             <div class="chips">
-              <span class="chip">Vector DB</span><span class="chip">&lt;1MB core</span><span class="chip">Deterministic
-                latency</span><span class="chip">AVX2/NEON</span>
-            </div>
-          </article>
-
-          <article class="proj">
-            <div class="proj-title">
-              <b>RayforceDB — Founder & Lead Architect</b>
-              <span>2020 — Present · <a href="https://rayforcedb.com/" target="_blank" rel="noreferrer">rayforcedb.com</a></span>
-            </div>
-            <div class="p muted">
-              SIMD-first columnar analytical database with a Lisp-like query language (<b><a href="https://core.rayforcedb.com/content/documentation/overview.html" target="_blank" rel="noreferrer">Rayfall</a></b>), implemented in C
-              with zero dependencies.
-            </div>
-            <ul class="bullets">
-              <li>Designed a vectorized execution model with cache-friendly column layouts and mmap-based storage.</li>
-              <li>Built an end-to-end ecosystem: core engine, language/runtime, test & benchmark tooling, and bindings
-                (Python/Rust/WASM).</li>
-              <li>Targeted at time-series analytics and low-latency decision pipelines as a modern alternative to kdb+ /
-                embedded analytics stacks.</li>
-            </ul>
-            <div class="chips">
-              <span class="chip">C17</span><span class="chip">SIMD (AVX2/NEON)</span><span
-                class="chip">Columnar</span><span class="chip">mmap</span><span class="chip">Zero deps</span><span
-                class="chip">Language design</span>
-            </div>
-          </article>
-
-          <article class="proj">
-            <div class="proj-title">
-              <b>ThePlatform — Co-Founder</b>
-              <span>2016 — Present · <a href="https://theplatform.technology/" target="_blank" rel="noreferrer">theplatform.technology</a></span>
-            </div>
-            <div class="p muted">
-              Real-time + historical analytics stack for financial data with a custom programming language (<b><a href="https://theplatform.technology/applicationexamples.html" target="_blank" rel="noreferrer">O</a></b>)
-              and async messaging runtime.
-            </div>
-            <ul class="bullets">
-              <li>Built language/runtime components and a declarative model for streaming & historical analytics.</li>
-              <li>Implemented communication reagents: TCP/UDP/WebSocket/IPC/TLS, timers, plugins, and standard library
-                tooling (parsers, serialization).</li>
-              <li>Used to power low-latency analytics workflows and risk/market-data pipelines.</li>
-            </ul>
-            <div class="chips">
-              <span class="chip">Language + runtime</span><span class="chip">Time-series</span><span
-                class="chip">Low-latency</span><span class="chip">C</span><span class="chip">Streaming</span>
+              <span class="chip">Vector DB</span><span class="chip">&lt;1MB core</span><span class="chip">AVX2/NEON</span>
             </div>
           </article>
 
           <article class="proj">
             <div class="proj-title">
               <b>hyperbridge</b>
-              <span>Rust · <a href="https://github.com/singaraiona/hyperbridge" target="_blank" rel="noreferrer">GitHub</a></span>
+              <span>Open Source · <a href="https://github.com/singaraiona/hyperbridge" target="_blank" rel="noreferrer">GitHub</a></span>
             </div>
             <div class="p muted">
-              High-throughput multi-producer/multi-consumer unbounded channel with async support (lock-free,
-              concurrency-first).
+              Lock-free multi-producer/multi-consumer unbounded channel with async support in Rust.
             </div>
             <div class="chips">
               <span class="chip">Rust</span><span class="chip">Lock-free</span><span
-                class="chip">Concurrency</span><span class="chip">Async</span>
+                class="chip">Concurrency</span>
             </div>
           </article>
         </section>
@@ -759,43 +757,43 @@
 
           <div class="xp">
             <div class="xp-head">
-              <div class="xp-role">Founder & Principal Architect</div>
+              <div class="xp-role">Creator & Principal Architect — RayforceDB</div>
               <div class="xp-meta">2020 — Present</div>
             </div>
-            <div class="xp-org">RayforceDB / TeideDB</div>
+            <div class="xp-org">Independent → Sponsored by Lynx Trading Technologies</div>
             <ul class="bullets">
-              <li>Architected multiple database engines and language runtimes focused on vectorized execution and
-                minimal footprint.</li>
-              <li>Designed SIMD-optimized operators, memory layouts, storage formats, and execution models for
-                analytical workloads.</li>
-              <li>Built production-grade build & test infrastructure and public open-source ecosystems (bindings,
-                benchmarks, docs).</li>
+              <li>Created an original columnar database and the Rayfall programming language from scratch;
+                independently developed, then sponsored by Lynx for production adoption.</li>
+              <li>Built a cross-platform ecosystem (C engine, Python/Rust/WASM bindings, VS Code tooling)
+                now used in production financial analytics environments.</li>
             </ul>
           </div>
 
           <div class="xp">
             <div class="xp-head">
-              <div class="xp-role">Co-Founder</div>
+              <div class="xp-role">Creator & Lead Architect — ThePlatform</div>
               <div class="xp-meta">2016 — Present</div>
             </div>
-            <div class="xp-org">ThePlatform</div>
+            <div class="xp-org">Lynx Trading Technologies</div>
             <ul class="bullets">
-              <li>Built a real-time analytics stack used in financial data processing environments.</li>
-              <li>Designed language/runtime capabilities enabling declarative analytics and streaming computation.</li>
+              <li>Created a real-time analytics database and the O programming language for Lynx,
+                replacing kdb+/q infrastructure across hundreds of production instances.</li>
+              <li>Delivered 7-figure annual cost savings while consolidating multiple vendor tools
+                into a single platform for market data, risk, and order flow analytics.</li>
             </ul>
           </div>
 
           <div class="xp">
             <div class="xp-head">
-              <div class="xp-role">Senior Engineer</div>
-              <div class="xp-meta">2013 — 2020</div>
+              <div class="xp-role">Senior Systems Engineer</div>
+              <div class="xp-meta">2013 — 2016</div>
             </div>
-            <div class="xp-org">Confidential (NDA) — Algorithmic Trading / FinTech</div>
+            <div class="xp-org">Lynx Trading Technologies</div>
             <ul class="bullets">
-              <li>Developed low-latency trading infrastructure, market-data processing, and real-time analytics
-                pipelines.</li>
-              <li>Worked on performance-critical systems where deterministic latency and correctness under load are
-                essential.</li>
+              <li>Built low-latency trading infrastructure, market-data processing, and real-time analytics
+                pipelines for US equity markets.</li>
+              <li>Performance-critical systems work that led to identifying the need for — and subsequently
+                creating — ThePlatform as a kdb+ replacement.</li>
             </ul>
           </div>
 
@@ -846,17 +844,16 @@
           <div class="h2" style="margin-bottom:12px">Focus</div>
           <div class="kv">
             <div class="kv-item">
+              <b>Specialization</b>
+              <div>Database systems architecture • Programming language design • SIMD-vectorized execution engines</div>
+            </div>
+            <div class="kv-item">
               <b>Domains</b>
-              <div>Columnar analytics • Time-series • Embedded analytics • Low-latency finance</div>
+              <div>Financial analytics • Real-time trading systems • Time-series • Embedded analytics</div>
             </div>
             <div class="kv-item">
-              <b>Strengths</b>
-              <div>SIMD optimization • Cache-aware design • Language runtimes • Minimal/zero-dep systems</div>
-            </div>
-            <div class="kv-item">
-              <b>Working Style</b>
-              <div>Build-from-scratch architectures, correctness under load, clean minimal code, measurable performance.
-              </div>
+              <b>Approach</b>
+              <div>Original from-scratch designs with zero dependencies, measurable performance, and production-grade reliability</div>
             </div>
           </div>
         </section>
@@ -865,11 +862,17 @@
           <div class="h2" style="margin-bottom:12px">Technical Skills</div>
           <div class="skill-groups">
             <div class="skill-group">
-              <div class="title">Languages</div>
+              <div class="title">Original Languages Created</div>
+              <div class="list">
+                <span class="chip chip-accent">Rayfall</span><span class="chip chip-accent">O language</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <div class="title">Implementation Languages</div>
               <div class="list">
                 <span class="chip">C (C17)</span><span class="chip">Rust</span><span class="chip">Python</span>
-                <span class="chip">k/q (kdb+)</span><span class="chip">Lisp/Scheme</span><span
-                  class="chip chip-accent">Rayfall</span><span class="chip chip-accent">O language</span>
+                <span class="chip">k/q (kdb+)</span><span class="chip">Lisp/Scheme</span>
               </div>
             </div>
 
@@ -910,12 +913,22 @@
         </section>
 
         <section class="card">
-          <div class="h2" style="margin-bottom:12px">Open Source</div>
-          <div class="p muted">
-            Maintains multiple performance-focused open-source projects (databases, runtimes, concurrency libraries).
-            <br /><br />
-            <b>GitHub:</b> <a href="https://github.com/singaraiona" target="_blank"
-              rel="noreferrer">github.com/singaraiona</a>
+          <div class="h2" style="margin-bottom:12px">Industry Adoption</div>
+          <div class="kv">
+            <div class="kv-item">
+              <b>Production Use</b>
+              <div>Hundreds of instances at Lynx Trading Technologies powering real-time analytics, risk management, and order routing</div>
+            </div>
+            <div class="kv-item">
+              <b>Cost Impact</b>
+              <div>7-figure annual savings by replacing kdb+ licensing and consolidating vendor infrastructure</div>
+            </div>
+            <div class="kv-item">
+              <b>Open Source</b>
+              <div>RayforceDB, TeideDB, Teidelum, hyperbridge — MIT licensed<br />
+                <a href="https://github.com/singaraiona" target="_blank" rel="noreferrer">github.com/singaraiona</a>
+              </div>
+            </div>
           </div>
         </section>
 
