@@ -8,7 +8,7 @@ This is a single-page static HTML CV/resume for Anton Kundenko. There is no buil
 
 ## Files
 
-- `anton_kundenko_modern_cv.html` — Self-contained HTML+CSS CV (no external JS, all styles inline in `<style>`)
+- `index.html` — Self-contained HTML+CSS CV (no external JS, all styles inline in `<style>`), served via GitHub Pages at cv.rayforcedb.com
 - `avatar.png` — Profile photo referenced by the HTML
 
 ## Development
