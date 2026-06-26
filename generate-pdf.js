@@ -8,7 +8,7 @@ const path = require('path');
   await page.emulateMediaType('screen');
   await page.setViewport({ width: 1200, height: 1600 });
 
-  const filePath = path.resolve(__dirname, 'anton_kundenko_cv.html');
+  const filePath = path.resolve(__dirname, 'index.html');
   await page.goto(`file://${filePath}`, { waitUntil: 'networkidle0' });
   await page.evaluateHandle('document.fonts.ready');
 

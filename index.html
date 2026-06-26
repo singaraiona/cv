@@ -181,6 +181,24 @@
       flex-shrink: 0;
     }
 
+    .ieee-badge {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #38bdf8;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .ieee-badge .diamond {
+      font-size: 11px;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: 2.2fr 1fr;
@@ -203,6 +221,7 @@
     .side .card:nth-child(2) { animation-delay: 0.3s; }
     .side .card:nth-child(3) { animation-delay: 0.4s; }
     .side .card:nth-child(4) { animation-delay: 0.5s; }
+    .side .card:nth-child(5) { animation-delay: 0.6s; }
 
     .section {
       margin-bottom: 40px;
@@ -590,6 +609,14 @@
             hetoku.com
           </a>
 
+          <a class="contact" href="https://anton.kundenko.dev/" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M6.18 17.82a2.18 2.18 0 100 4.36 2.18 2.18 0 000-4.36zM4 10.1v3.09c2.34 0 4.58.93 6.24 2.59A8.83 8.83 0 0112.83 22h3.09c0-6.58-5.34-11.9-11.92-11.9zM4 4.44v3.09C12.01 7.53 18.47 14 18.47 22h3.09C21.56 12.29 13.71 4.44 4 4.44z" />
+            </svg>
+            anton.kundenko.dev
+          </a>
+
           <a class="contact" href="https://github.com/singaraiona" target="_blank" rel="noreferrer">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path
@@ -607,6 +634,10 @@
             LinkedIn
           </a>
         </nav>
+
+        <div class="ieee-badge">
+          <span class="diamond">◆</span> IEEE Senior Member · 2026
+        </div>
       </div>
     </header>
 
@@ -830,6 +861,18 @@
             <div class="kv-item">
               <b>Approach</b>
               <div>Original from-scratch designs with zero dependencies, measurable performance, and production-grade reliability</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="h2" style="margin-bottom:12px">Recognition</div>
+          <div class="kv">
+            <div class="kv-item">
+              <b>Professional Membership</b>
+              <div><b style="color:var(--ink);font-weight:700">IEEE Senior Member</b><br />
+                Spain Section · Elected 2026<br />
+                Member #102451070 · Valid through Dec 2026</div>
             </div>
           </div>
         </section>
